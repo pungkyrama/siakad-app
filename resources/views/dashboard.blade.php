@@ -1,0 +1,61 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800">Dashboard</h2>
+    <p class="text-gray-600 text-sm mt-1">Sistem Informasi Akademik Terpadu</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center hover:shadow-md transition-shadow">
+        <div class="p-3 rounded-full bg-blue-50 text-blue-600 mr-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </div>
+        <div>
+            <p class="text-sm font-medium text-gray-500">Total Mahasiswa</p>
+            <p class="text-2xl font-bold text-gray-800">{{ \App\Models\Student::count() ?? 0 }}</p>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center hover:shadow-md transition-shadow">
+        <div class="p-3 rounded-full bg-green-50 text-green-600 mr-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+        </div>
+        <div>
+            <p class="text-sm font-medium text-gray-500">Dosen Pengajar</p>
+            <p class="text-2xl font-bold text-gray-800">{{ \App\Models\Lecturer::count() ?? 0 }}</p>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center hover:shadow-md transition-shadow">
+        <div class="p-3 rounded-full bg-purple-50 text-purple-600 mr-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        </div>
+        <div>
+            <p class="text-sm font-medium text-gray-500">Mata Kuliah</p>
+            <p class="text-2xl font-bold text-gray-800">{{ \App\Models\Course::count() ?? 0 }}</p>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center hover:shadow-md transition-shadow">
+        <div class="p-3 rounded-full bg-orange-50 text-orange-600 mr-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+        </div>
+        <div>
+            <p class="text-sm font-medium text-gray-500">Program Studi</p>
+            <p class="text-2xl font-bold text-gray-800">{{ \App\Models\Department::count() ?? 0 }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">Selamat Datang di SIAKAD Pro</h3>
+    <p class="text-gray-600 leading-relaxed">
+        Sistem Informasi Akademik Kampus (SIAKAD) ini didesain secara modern dan formal untuk memudahkan tata kelola administrasi institusi perguruan tinggi. Silakan gunakan menu di bilah navigasi sebelah kiri untuk mengelola master data, registrasi pengguna, penjadwalan kelas, penilaian, dan keuangan.
+    </p>
+</div>
+@endsection
